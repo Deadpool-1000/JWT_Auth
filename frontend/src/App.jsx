@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <p>Hello Explore JWT's</p>
+      <p>Hello Explore JWT</p>
       <button onClick={createCookie}>Click me to get a cookie</button>
       <button onClick={getPrivate}>Get Private Information</button>
       {error && !privateInfo && <p style={{color:'red'}}>{error}</p>}

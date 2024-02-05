@@ -7,8 +7,8 @@ const cors = require('cors')
 require('dotenv').config()
 
 
-let CurrentDate = new Date()
-CurrentDate.setMonth(CurrentDate.getMonth() + 1)
+let CurrentTime = new Date().getTime()
+let CurrentDate = new Date(CurrentTime + 2 * 60 * 60 * 1000)
 
 
 const privateKey = fs.readFileSync('./keys/private.key', 'utf-8')
@@ -70,7 +70,7 @@ app.post('/login_with_secret', (req, res)=>{
         {
             user
         }, 
-        process.env.SECRET, 
+        process.env.SECRET, // Secret must be as long as the output (256 bits)
         signOptions1
     );
 
